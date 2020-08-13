@@ -16,7 +16,12 @@ spec:
     spec:
       containers:
       - name: go-hpa-docker
-        image: vremerson/go-hpa:1.0
+        image: vremerson/go-hpa:2.0
         ports:
         - containerPort: 8000
+        resources:
+          requests:
+            cpu: "50m"
+          limits:
+            cpu: "100m"
 

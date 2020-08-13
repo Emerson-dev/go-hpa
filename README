@@ -1,4 +1,4 @@
-kubectl run go-hpa --image=vremerson/go-hpa:1.0 --requests=cpu=200 --expose --port=8000
+kubectl run go-hpa --image=vremerson/go-hpa:2.0 --requests=cpu=200 --expose --port=8000
 kubectl apply -f deployment-go-hpa.yaml
 kubectl apply -f service-go-hpa.yaml
 kubectl apply -f hpa.yaml
@@ -36,7 +36,7 @@ kubectl expose deployment hello-nginx --type=LoadBalancer --port=80
 minikube service nginx-service
 
 ## Golang docker
-docker build -t vremerson/go-hpa:1.0 .
+docker build -t vremerson/go-hpa:2.0 .
 
-docker run -it -p 8000:8000 vremerson/go-hpa:1.0
+docker run -it -p 8000:8000 vremerson/go-hpa:2.0
 
