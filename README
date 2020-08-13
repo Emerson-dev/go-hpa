@@ -40,3 +40,4 @@ docker build -t vremerson/go-hpa:2.0 .
 
 docker run -it -p 8000:8000 vremerson/go-hpa:2.0
 
+
