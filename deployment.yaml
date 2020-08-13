@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-hpa
+  labels:
+    app: go-hpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-hpa
+  template:
+    metadata:
+      labels:
+        app: go-hpa
+    spec:
+      containers:
+      - name: go-hpa-docker
+        image: vremerson/go-hpa:1.0
+        ports:
+        - containerPort: 8000
+
